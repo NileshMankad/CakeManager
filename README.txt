@@ -36,9 +36,12 @@ Open the browser and hit
 
 http://localhost:8080/cakes
 
-Above should give you the UI to insert the cake details.
+Above should give you the UI to insert the cake details. Here you will have a link to download the data into json format.
 
 http://localhost:8080/
 
-Above should give the list of inserted cakes
+Above should give the list of inserted cakes in JSON, by default I have already added one cake (called Rose cake)
+
+
+
 
