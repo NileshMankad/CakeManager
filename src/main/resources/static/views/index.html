@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Main Page</title>
+</head>
+<body ng-app="demo">
+<hr/>
+<div class="container" ng-controller="CakeController">
+    <div class="row">
+        <label>Title</label> <input type="text" ng-model="cakeDto.title" class="input-sm spacing"/>
+        <label>Description</label> <input type="text" ng-model="cakeDto.description" class="input-sm spacing"/>
+        <label>Image</label> <input type="text" ng-model="cakeDto.image" class="input-sm spacing"/>
+                                                               
+        <button ng-click="saveCake()" class="btn btn-sm btn-info">Save Cake</button>
+    </div>
+    <hr/>
+    <div class="row">
+        <p>{{allCakes | json}}</p>
+        <input type=hidden id="myjson" value={{allCakes}}/>
+        <div class="">
+          <a href="data:application/json,{{allCakes}}" download="my_file.json" onclick="downloadJSON()">Download your data</a>
+          <!--  <input type="button" value="Download JSON" onclick="downloadJSON()" /> -->
+        </div>
+    </div>
+    <hr/>
+    <!-- 
+    <div class="row" ng-repeat="cake in allCakes">
+        <div class="">
+            <h5>{{cake.title}}, {{cake.description}}</h5>
+        </div>
+    </div>
+    -->
+</div>
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/CakeController.js"></script>
+<script src="js/app/CakeService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+
+<script type="text/javascript">
+
+    function downloadJSON() {
+    	//$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob|chrome-extension|data|local):/);
+    	 const jdata = JSON.stringify(myjson.value);
+    	
+        //const blob = new Blob([ JSON.stringify(myjson.value) ], { type: 'application/json' });
+        const blob = new Blob([ myjson.value ], { type: 'application/json' });
+      //Check the Browser.
+        var isIE = false || !!document.documentMode;
+        if (isIE) {
+            window.navigator.msSaveBlob(blob1, "cakes.json");
+        } else {
+        	// const url = window.URL || window.webkitURL;
+            const link = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = link;
+            a.download = "cakes.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+   }
+</script>    
+</html>
