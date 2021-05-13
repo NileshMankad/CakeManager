@@ -48,6 +48,6 @@ If you want to go with Docker way, follow the steps given below (I have pushed t
 
 1) sudo yum install -y docker (optional if docker is already installed)
 2) sudo service docker start (optional if docker service is already up)
-3) sudo docker run -d -p 80:8080 njm003/nilesh:dropwizard-nilesh
+3) sudo docker run -d -p 80:8080 njm003/nilesh:CakeDemoNilesh
 4) Open the browser and visit the http://localhost:8080/cakes
 
