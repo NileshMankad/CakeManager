@@ -10,4 +10,6 @@ import com.waracle.demo.entity.Cake;
  */
 @Repository
 public interface CakeRepository extends JpaRepository<Cake, Integer>{
+	
+	public Cake findByTitle(String title);
 }

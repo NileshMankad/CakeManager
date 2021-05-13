@@ -1,0 +1,16 @@
+
+https://dzone.com/articles/java-8-springboot-angularjs-bootstrap-springdata-j
+
+Here is a link to the exercise: https://github.com/Waracle/cake-manager
+
+ 
+
+There is a readme file with instructions for you and if you could please send us your test back as a link to your github repo that would be great. However, a zip or gzip would also be good. Please note that this exercise will represent your skills to our developers and enable them to see how you would fit best within the team so please do spend some time on it to ensure you make the best first impression.
+
+netstat -ano | findstr 8080
+taskkill /F /PID < Process Id >
+
+
+<a download>Download your data</a>
+
+https://stackabuse.com/how-to-test-a-spring-boot-application/

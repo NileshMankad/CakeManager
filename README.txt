@@ -36,12 +36,18 @@ Open the browser and hit
 
 http://localhost:8080/cakes
 
-Above should give you the UI to insert the cake details. Here you will have a link to download the data into json format.
+Above should give you the UI to insert the cake details.
 
 http://localhost:8080/
 
-Above should give the list of inserted cakes in JSON, by default I have already added one cake (called Rose cake)
+Above should give the list of inserted cakes
 
+OR
 
+If you want to go with Docker way, follow the steps given below (I have pushed the image into Docker public hub)
 
+1) sudo yum install -y docker (optional if docker is already installed)
+2) sudo service docker start (optional if docker service is already up)
+3) sudo docker run -d -p 80:8080 njm003/nilesh:dropwizard-nilesh
+4) Open the browser and visit the http://localhost:8080/cakes
 
